@@ -47,6 +47,15 @@
       })
     }
     function deleteData() {
+      UTdata.fetch()
+      .then(function(uTdata){
+        return uTdata.delete();
+      })
+      .then(function(results){
+        $("#display").removeClass();
+        $("#display").addClass("bg-success");
+        $("#display").html("delete fail:" + JSON.stringify(error));
+      })
     }
     function updateData() {
     }
